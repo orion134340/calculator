@@ -2,19 +2,20 @@ import math
 
 def calculator():
     print("=== калькулятор ===")
-    print(" операции:")
+    print("операции:")
     print("1. сложение (+)")
     print("2. вычитание (-)")
     print("3. умножение (*)")
     print("4. деление (/)")
     print("5. возведение в степень (**)")
     print("6. извлечение квадратного корня (sqrt)")
-    print("7. выход")
+    print("7. остаток от деления (%)")
+    print("8. выход")
 
-    while true:
-        choice = input("\nвыберите операцию (1-7): ")
+    while True:
+        choice = input("\nвыберите операцию (1-8): ")
 
-        if choice == "7":
+        if choice == "8":
             print("выход из программы. спасибо!")
             break
 
@@ -43,11 +44,15 @@ def calculator():
                         print(f"результат: {num1} / {num2} = {num1 / num2}")
                 elif choice == "5":
                     print(f"результат: {num1} ** {num2} = {num1 ** num2}")
+                elif choice == "7":
+                    if num2 == 0:
+                        print("ошибка: деление на ноль!")
+                    else:
+                        print(f"результат: {num1} % {num2} = {num1 % num2}")
                 else:
                     print("неверный выбор операции.")
 
-        except valueerror:
+        except ValueError:
             print("ошибка: введите корректное число!")
-
 
 calculator()
